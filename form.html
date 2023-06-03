@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+         var firstName=document.getElementById("firstname").value
+            var firstNameCheck=/^[a-zA-Z ]+$/
+            var mobile=document.getElementById("mobile").value
+            var mobileCheck=/^[0-9]{10}$/
+           var email=document.getElementById("email").value
+            var emailCheck=/^[a-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
+           var num=document.getElementById("num").value
+            var numCheck=/^(\([0-9]{3}\)|[0-9]{3})[\s\-]?[\0-9]{3}[\s\-]?[0-9]{4}$/
+            var pwd=document.getElementById("pwd").value
+            var pwdCheck=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/  
+       var dob=document.getElementById("dob").value
+        var dobCheck=/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
+     if( firstName=="" || firstName.length<3){
+                alert("pls enter ur first name")
+                return false
+            }
+            if(!firstName.match(firstNameCheck)){
+                alert(" Name must carry only alphabets")
+                return false
+            }
+             if(!mobile.match(mobileCheck)){
+                alert("pls check ur mobile number")
+                return false
+            }
+              if(!email.match(emailCheck)){
+                alert("pls enter valid email id ")
+                return false
+            }
+              if(!num.match(numCheck)){
+                alert("pls enter valid  american number")
+                return false 
+            } 
+            if(!pwd.match(pwdCheck)){
+                alert("pls enter valid  password ")
+                return false 
+            }        
+         if(!dob.match(dobCheck)){
+              alert("pls enter valid dob")
+              return false
+            }
+            return true
+        }
+        </script>
+</head>
+<body>
+     <form onsubmit="return  validate()"> 
+  <p><input type="text" placeholder="enter ur firstname" id="firstname" /></p>
+    <p><input type="text" placeholder="enter mobileno." id="mobile"/></p>
+   <p><input type="text" placeholder="enter ur email"  id="email"/></p> 
+     <p><input  placeholder="enter ur american number"  id="num"/></p> 
+     <p><input placeholder="enter password" id="pwd"/></p>    
+   <p><input placeholder=" DD/MM/YY" id="dob"/></p> 
+      <button>submit</button>
+    </form>
+</body>
+</html>
